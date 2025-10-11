@@ -59,6 +59,8 @@ locale:
 # Site features
 
 features:
+  search:
+    provider: wowchemy
   syntax_highlighter:
     enable: true
     extra_languages:
