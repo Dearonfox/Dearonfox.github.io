@@ -1,6 +1,6 @@
 ---
 # Display name
-title: 엄상훈
+title: 전북대학교 컴퓨터공학부 엄상훈
 
 # Is this the primary user of the site?
 superuser: true
