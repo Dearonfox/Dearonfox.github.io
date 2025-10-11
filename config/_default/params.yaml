@@ -60,7 +60,7 @@ locale:
 
 features:
   search:
-    provider: wowchemy
+    provider: pagefind
   syntax_highlighter:
     enable: true
     extra_languages:
