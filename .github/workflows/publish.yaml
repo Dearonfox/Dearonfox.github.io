@@ -4,13 +4,10 @@ env:
   WC_HUGO_VERSION: '0.124.1'
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
   push:
     branches: ["main"]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
-# Provide permission to clone the repo and deploy it to GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -21,7 +18,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build website
   build:
     if: github.repository_owner != 'HugoBlox'
     runs-on: ubuntu-latest
@@ -29,67 +25,71 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          # Fetch history for Hugo's .GitInfo and .Lastmod
           fetch-depth: 0
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: ${{ env.WC_HUGO_VERSION }}
           extended: true
+
       - uses: actions/cache@v4
         with:
           path: /tmp/hugo_cache_runner/
           key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.mod') }}
           restore-keys: |
             ${{ runner.os }}-hugomod-
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
         run: |
-          echo "Hugo Cache Dir: $(hugo config | grep cachedir)"
+          echo "Hugo Cache Dir: $(hugo config | grep cachedir || true)"
           hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      # Pagefind 실행을 위한 Node 준비
       - name: Setup Node (for Pagefind)
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Generate Pagefind search index
-        run: npx pagefind --source "public"
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public- name: Generate Pagefind search index (try --source, then --site)
+      # Pagefind 인덱스 생성 (우선 --source, 실패 시 --site로 재시도)
+      - name: Generate Pagefind search index (try --source, then --site)
         run: |
           npx pagefind --version
-          # 1차 시도: --source (권장)
           npx pagefind --source "public" || true
-          # 2차 fallback: --site (일부 러너/버전에서만 먹는 경우)
           if [ ! -f public/pagefind/manifest.json ]; then
             echo "Fallback to --site…"
             npx pagefind --site "public" || true
           fi
 
+      # 생성물 확인 (manifest.json 없으면 실패)
       - name: Verify Pagefind output (must exist)
         run: |
           set -e
-          echo "[DEBUG] public 내용:"
+          echo "[DEBUG] public:"
           ls -la public || true
-          echo "[DEBUG] pagefind 내용:"
+          echo "[DEBUG] public/pagefind:"
           ls -la public/pagefind || true
           test -f public/pagefind/manifest.json || (echo "❌ Pagefind manifest.json not found"; exit 1)
-이렇게 하면:
 
-  # Deploy website to GitHub Pages hosting
+      # GitHub Pages 배포 아티팩트 업로드
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
   deploy:
     if: github.repository_owner != 'HugoBlox'
+    runs-on: ubuntu-latest
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
