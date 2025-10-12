@@ -61,7 +61,26 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./public- name: Generate Pagefind search index (try --source, then --site)
+        run: |
+          npx pagefind --version
+          # 1차 시도: --source (권장)
+          npx pagefind --source "public" || true
+          # 2차 fallback: --site (일부 러너/버전에서만 먹는 경우)
+          if [ ! -f public/pagefind/manifest.json ]; then
+            echo "Fallback to --site…"
+            npx pagefind --site "public" || true
+          fi
+
+      - name: Verify Pagefind output (must exist)
+        run: |
+          set -e
+          echo "[DEBUG] public 내용:"
+          ls -la public || true
+          echo "[DEBUG] pagefind 내용:"
+          ls -la public/pagefind || true
+          test -f public/pagefind/manifest.json || (echo "❌ Pagefind manifest.json not found"; exit 1)
+이렇게 하면:
 
   # Deploy website to GitHub Pages hosting
   deploy:
