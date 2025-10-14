@@ -7,6 +7,26 @@ main:
   - name: Home
     url: /
     weight: 10
-  - name: Resumé
+
+  - name: Project
     url: about/
     weight: 20
+    identifier: Project  
+
+
+  - name: Project_1
+    parent: Project      
+    pageRef: project    
+    weight: 21
+
+  
+  - name: Project_2
+    parent: Project
+    pageRef: publication 
+    weight: 22
+
+  
+  - name: GitHub
+    parent: Project
+    url: https://github.com/Dearonfox
+    weight: 23
