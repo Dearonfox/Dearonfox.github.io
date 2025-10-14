@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 defaultContentLanguage: ko
 defaultContentLanguageInSubdir: true
-title: Hugo Portfolio Theme # Website name
+title: My Blog # Website name
 baseURL: 'https://dearonfox.github.io/' # Website URL
 
 ############################
