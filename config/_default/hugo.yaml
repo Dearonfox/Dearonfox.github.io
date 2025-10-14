@@ -5,7 +5,7 @@
 defaultContentLanguage: ko
 defaultContentLanguageInSubdir: true
 title: Hugo Portfolio Theme # Website name
-baseURL: 'https://example.com/' # Website URL
+baseURL: 'https://dearonfox.github.io/' # Website URL
 
 ############################
 ## PAGE OPTIONS
