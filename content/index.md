@@ -42,5 +42,5 @@ sections:
       is_fullscreen: true
       loop: true
       interval: 5000
-      
+      slide_height: '380px'
 ---
