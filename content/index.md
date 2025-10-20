@@ -39,7 +39,7 @@ sections:
             text: Join Us
             url: ../contact/
     design:
-      is_fullscreen: true
+      is_fullscreen: False
       loop: true
       interval: 5000
       slide_height: '380px'
