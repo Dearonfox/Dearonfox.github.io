@@ -40,6 +40,7 @@ sections:
             url: ../contact/
     design:
       is_fullscreen: true
-      loop: false
-      interval: 2000
+      loop: true
+      interval: 5000
+      
 ---
