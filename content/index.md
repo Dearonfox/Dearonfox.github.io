@@ -38,6 +38,30 @@ sections:
             icon_pack: fas
             text: Join Us
             url: ../contact/
+             - block: features
+    content:
+      title: My Experience
+      subtitle: ""
+      items:
+        - icon: r-project
+          icon_pack: fab
+          name: R
+          description: 90%
+        - icon: chart-line
+          icon_pack: fas
+          name: Statistics
+          description: 100%
+        - icon: camera-retro
+          icon_pack: fas
+          name: Photography
+          description: 10%
+        # 이모지 예시
+        - icon: "😄"
+          icon_pack: emoji
+          name: Emojiness
+          description: 100%
+    design:
+      columns: 4
     design:
       is_fullscreen: False
       loop: true
