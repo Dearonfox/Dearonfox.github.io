@@ -38,11 +38,11 @@ sections:
             icon_pack: fas
             text: Join Us
             url: ../contact/
-          design:
-            is_fullscreen: false
-            loop: true
-            interval: 5000
-            slide_height: '450px'
+    design:
+      is_fullscreen: false
+      loop: true
+      interval: 5000
+      slide_height: '450px'
   - block: features
     content:
       title: My Experience
