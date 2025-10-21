@@ -48,22 +48,29 @@ sections:
       title: My Experience
       subtitle: ""
       items:
-        - icon: r-project
+        - icon: react
           icon_pack: fab
-          name: R
-          description: 90%
-        - icon: chart-line
+          name: React
+          description: SPA & Hooks
+        - icon: js
+          icon_pack: fab
+          name: JavaScript
+          description: ES6+ / TypeScript
+        - icon: python
+          icon_pack: fab
+          name: Python
+          description: Data & Scripting
+        - icon: code
           icon_pack: fas
-          name: Statistics
-          description: 100%
-        - icon: camera-retro
+          name: C++
+          description: Algorithm
+        - icon: database
           icon_pack: fas
-          name: Photography
-          description: 10%
-        # 이모지 예시
+          name: SQL / NoSQL
+          description: Schema & Query
         - icon: "😄"
           icon_pack: emoji
-          name: Emojiness
+          name: Positivity
           description: 100%
     design:
       columns: 4

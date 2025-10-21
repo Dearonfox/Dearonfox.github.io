@@ -28,5 +28,5 @@ main:
   
   - name: Contact
     parent: 
-    url: https://github.com/Dearonfox
+    pageREf: contact
     weight: 23
