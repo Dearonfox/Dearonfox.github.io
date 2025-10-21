@@ -27,6 +27,5 @@ main:
 
   
   - name: Contact
-    parent: 
-    pageREf: contact
+    pageRef: contact
     weight: 23
