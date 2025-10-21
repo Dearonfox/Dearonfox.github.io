@@ -27,6 +27,6 @@ main:
 
   
   - name: Contact
-    parent: about/
+    parent: 
     url: https://github.com/Dearonfox
     weight: 23
