@@ -38,6 +38,11 @@ sections:
             icon_pack: fas
             text: Join Us
             url: ../contact/
+          design:
+            is_fullscreen: false
+            loop: true
+            interval: 5000
+            slide_height: '450px'
   - block: features
     content:
       title: My Experience
@@ -61,9 +66,5 @@ sections:
           name: Emojiness
           description: 100%
     design:
-      is_fullscreen: False
-      loop: true
-      interval: 5000
-      slide_height: '450px'
       columns: 4
 ---
