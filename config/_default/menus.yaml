@@ -16,13 +16,13 @@ main:
 
   - name: Project_1
     parent: Project      
-    pageRef: project    
+    url: project    
     weight: 21
 
   
   - name: Project_2
     parent: Project
-    pageRef: publication 
+    url: publication 
     weight: 22
 
   
