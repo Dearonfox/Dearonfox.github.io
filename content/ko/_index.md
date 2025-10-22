@@ -26,7 +26,9 @@ sections:
             color: '#333'
         - title: 협업 문의 환영합니다!
           content: |
-            문의 주시면 일정 맞춰 빠르게 연락드리겠습니다!
+            <p style="color:#fff !important;">
+              문의 주시면 일정 맞춰 빠르게 연락드리겠습니다!
+            </p>
 
             <a class="btn" href="/contact/" style="background:#fff;border-color:#fff;color:#111;opacity:1">연락하기</a>
           background:
