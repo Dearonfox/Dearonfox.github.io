@@ -5,12 +5,7 @@
 # Default language
 ko:
   languageName: 한국어
-  languageCode: ko-kr
-  weight: 1
-en:
-  languageName: English
-  languageCode: en-us
-  weight: 2
+  contentDir: content/ko
 
 
   # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
