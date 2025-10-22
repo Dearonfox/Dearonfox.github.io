@@ -27,5 +27,5 @@ main:
 
   
   - name: Contact
-    url: contact/
+    url: /ko/contact/
     weight: 23
