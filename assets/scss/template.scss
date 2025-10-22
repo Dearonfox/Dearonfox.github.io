@@ -1,7 +1,8 @@
 // Starter Blog Template
 // https://hugoblox.com/hugo-themes/
-:root {
-  --primary: #6bb3ff;      
+html[data-theme="dark"]{
+  --bs-primary: #46067f;
+  
 }
 body {
   background-color: rgb(247, 250, 252);
