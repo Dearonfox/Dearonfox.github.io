@@ -3,6 +3,7 @@ title: "Contact"
 summary: "연락처"
 draft: false
 type: page
+url: /contact/
 ---
 
 ## 연락처
