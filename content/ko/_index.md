@@ -19,7 +19,11 @@ sections:
           content: |
             문의 주시면 일정 맞춰 빠르게 연락드리겠습니다!
 
-            {{< button text="Join Us" url="/contact/" color="primary" >}}
+            <p>
+              <a class="btn btn-primary" href="/contact/">
+                Join Us
+              </a>
+            </p>
           background:
             image:
               filename: web.jpg
