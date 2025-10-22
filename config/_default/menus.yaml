@@ -27,5 +27,5 @@ main:
 
   
   - name: Contact
-    url: contact
+    pageRef: contact
     weight: 23
