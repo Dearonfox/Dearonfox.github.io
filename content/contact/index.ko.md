@@ -1,7 +1,8 @@
 ---
 title: "Contact"
 summary: "연락처"
-
+draft: false
+type: page
 ---
 
 ## 연락처
