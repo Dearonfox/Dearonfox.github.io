@@ -16,9 +16,10 @@ sections:
             position: right
             color: '#666'
         - title: 협업 문의 환영합니다!
-          content: '문의 주시면 일정 맞춰 빠르게 연락드리겠습니다!'
-          align: left
-          {{< button text="Join Us" url="/contact/" color="primary" >}}
+          content: |
+            문의 주시면 일정 맞춰 빠르게 연락드리겠습니다!
+
+            {{< button text="Join Us" url="/contact/" color="primary" >}}
           background:
             image:
               filename: web.jpg
