@@ -115,3 +115,27 @@ ul.network-icon .big-icon {
 .wg-about .portrait-title h3 {
   font-size: 0.8rem;
 }
+btn, a.btn {
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+/* 기본(primary) 버튼 */
+.btn.btn-primary:hover,
+a.btn.btn-primary:hover {
+  background-color: #b36bff;  
+  border-color: #ff6bda;
+  color: #fff;
+}
+
+.btn.btn-outline-primary:hover,
+a.btn.btn-outline-primary:hover {
+  background-color: #222;
+  border-color: #222;
+  color: #fff;
+}
+
+.btn.btn-link:hover,
+a.btn.btn-link:hover {
+  text-decoration: none;
+  color: #ff6b6b;
+}
