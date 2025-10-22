@@ -1,11 +1,7 @@
 // Starter Blog Template
 // https://hugoblox.com/hugo-themes/
-html[data-theme="dark"]{
-  --bs-primary: #46067f;
-  
-}
 body {
-  background-color: rgb(247, 250, 252);
+  background-color: rgb(173, 201, 188);
 }
 
 .article-container {
@@ -14,7 +10,7 @@ body {
 }
 
 .dark .article-container {
-  background-color: rgb(31, 39, 51);
+  background-color: rgb(47, 55, 67);
 }
 
 // custom footer color
@@ -23,7 +19,7 @@ body {
 }
 
 .dark .page-footer {
-  background-color: rgb(26, 32, 44);
+  background-color: rgb(44, 47, 51);
 }
 
 // more rounded cards and larger gap between cards
