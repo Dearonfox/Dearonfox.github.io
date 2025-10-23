@@ -22,7 +22,9 @@ sections:
       coordinates:
         latitude: 35.8460
         longitude: 127.1290
+      map:
+        enable: true      # ← 이 줄 추가 (필요시 확대도 지정)
+        zoom: 15
       contact_links: []
     design:
       columns: "1"
----
