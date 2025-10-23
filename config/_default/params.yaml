@@ -56,7 +56,7 @@ footer:
 locale:
   date_format: 'Jan 2, 2006'
   time_format: '3:04 PM'
-  address_format: ko-kr
+  address_format: none
 
 # Site features
 
@@ -97,6 +97,8 @@ features:
       api_key: ''
       index_name: ''
       show_logo: false
+
+
 map:
   provider: osm
   zoom: 15
