@@ -97,9 +97,9 @@ features:
       api_key: ''
       index_name: ''
       show_logo: false
-  map:
-    provider: osm
-    zoom: 15
+map:
+  provider: osm
+  zoom: 15
 
 # Extensions
 
