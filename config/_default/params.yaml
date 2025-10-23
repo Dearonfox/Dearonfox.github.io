@@ -61,6 +61,7 @@ locale:
 # Site features
 
 features:
+  share: false
   syntax_highlighter:
     enable: false
     extra_languages:
