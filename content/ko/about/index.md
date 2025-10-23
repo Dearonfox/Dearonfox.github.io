@@ -14,17 +14,21 @@ sections:
 
         - 관심 분야: 웹 프론트엔드/백엔드, 추천·분류 등 AI 응용  
         - 목표: 학부 프로젝트와 개인 사이드프로젝트를 통해 **AI 기반 웹서비스**를 런칭
+
   - block: contact
     content:
       title: 찾아오시는 길
       address:
-        street: "전북대학교"
+        street: "전북대학교 공과대학 7호관 626호"
+        city: "전주시"
+        region: "전라북도"
+        postcode: "54896"
+        country: "대한민국"
+        country_code: "KR"
       coordinates:
-        latitude: 35.8460
-        longitude: 127.1290
-      map:
-        enable: true      
-        zoom: 15
+        latitude: 35.84601324617979
+        longitude: 127.13444961966684
+      autolink: true
       contact_links: []
     design:
       columns: "1"
