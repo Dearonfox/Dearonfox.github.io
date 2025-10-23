@@ -1,5 +1,4 @@
 ---
-type: landing
 title: 자기소개
 summary: "전북대학교 컴퓨터공학부 재학 중 | 웹서비스 개발 관심 | AI 기술로 서비스 런칭 목표"
 draft: false 
