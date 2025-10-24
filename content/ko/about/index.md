@@ -3,6 +3,8 @@ title: 자기소개
 type: landing
 draft: false
 summary: "전북대학교 컴퓨터공학부 재학 중 | 웹서비스 개발 관심 | AI 기술로 서비스 런칭 목표"
+date: 2025-03-01T12:00:00+09:00
+lastmod: 2025-03-01T12:00:00+09:00
 sections:
   - block: markdown
     content:
