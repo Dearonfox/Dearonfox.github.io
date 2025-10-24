@@ -6,7 +6,7 @@ type: page
 url: /contact/
 ---
 
-## 연락처
-- 이메일: hjklpo909@naver.com  
+## Contact
+- Email : hjklpo909@naver.com  
 - GitHub: https://github.com/Dearonfox  
-문의는 메일로 부탁드립니다.
+Please contact me by email.

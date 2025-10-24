@@ -1,8 +1,7 @@
 // Starter Blog Template
 // https://hugoblox.com/hugo-themes/
-
 body {
-  background-color: rgb(247, 250, 252);
+  background-color: rgb(173, 201, 188);
 }
 
 .article-container {
@@ -11,7 +10,7 @@ body {
 }
 
 .dark .article-container {
-  background-color: rgb(31, 39, 51);
+  background-color: rgb(47, 55, 67);
 }
 
 // custom footer color
@@ -20,7 +19,7 @@ body {
 }
 
 .dark .page-footer {
-  background-color: rgb(26, 32, 44);
+  background-color: rgb(44, 47, 51);
 }
 
 // more rounded cards and larger gap between cards
@@ -114,4 +113,28 @@ ul.network-icon .big-icon {
 
 .wg-about .portrait-title h3 {
   font-size: 0.8rem;
+}
+btn, a.btn {
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+/* 기본(primary) 버튼 */
+.btn.btn-primary:hover,
+a.btn.btn-primary:hover {
+  background-color: #b36bff;  
+  border-color: #ff6bda;
+  color: #fff;
+}
+
+.btn.btn-outline-primary:hover,
+a.btn.btn-outline-primary:hover {
+  background-color: #222;
+  border-color: #222;
+  color: #fff;
+}
+
+.btn.btn-link:hover,
+a.btn.btn-link:hover {
+  text-decoration: none;
+  color: #ff6b6b;
 }

@@ -8,24 +8,28 @@ main:
     url: /
     weight: 10
 
+  - name: About
+    url: /about/
+    weight: 20
+
   - name: Project
     url: about/
-    weight: 20
+    weight: 30
     identifier: Project  
 
 
   - name: Project_1
     parent: Project      
     url: project    
-    weight: 21
+    weight: 31
 
   
   - name: Project_2
     parent: Project
     url: publication 
-    weight: 22
+    weight: 32
 
   
   - name: Contact
     url: /contact/
-    weight: 23
+    weight: 40

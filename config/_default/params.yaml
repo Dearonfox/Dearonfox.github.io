@@ -61,6 +61,7 @@ locale:
 # Site features
 
 features:
+  share: false
   syntax_highlighter:
     enable: false
     extra_languages:
@@ -100,7 +101,6 @@ features:
     provider: 'mapnik'
     api_key: ''
     zoom: 15
-
 # Extensions
 
 extensions:

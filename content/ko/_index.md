@@ -15,15 +15,6 @@ sections:
               filters: { brightness: 0.7 }
             position: right
             color: '#666'
-        - title: 협업 문의 환영합니다!
-          content: '문의 주시면 일정 맞춰 빠르게 연락드리겠습니다!'
-          align: left
-          background:
-            image:
-              filename: web.jpg
-              filters: { brightness: 0.7 }
-            position: center
-            color: '#555'
         - title: Build. Measure. Improve
           content: '데이터를 바탕으로 서비스를 지속적으로 개선합니다.'
           align: right
@@ -33,11 +24,19 @@ sections:
               filters: { brightness: 0.5 }
             position: center
             color: '#333'
-          link:
-            icon: graduation-cap
-            icon_pack: fas
-            text: Join Us
-            url: ../contact/
+        - title: 협업 문의 환영합니다!
+          content: |
+            <p style="color:#fff !important;">
+              문의 주시면 일정 맞춰 빠르게 연락드리겠습니다!
+            </p>
+
+            <a class="btn" href="/contact/" style="background:#fff;border-color:#fff;color:#111;opacity:1">연락하기</a>
+          background:
+            image:
+              filename: web.jpg
+              filters: { brightness: 0.7 }
+            position: center
+            color: '#555'
     design:
       is_fullscreen: false
       loop: true
