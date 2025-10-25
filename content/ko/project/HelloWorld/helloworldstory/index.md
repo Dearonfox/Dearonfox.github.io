@@ -2,7 +2,10 @@
 title: "Hello World 프로젝트 상세"
 date: 2025-10-25
 slug: "hello-world"   
-thumbnail: "hello.png" 
+image:
+  filename: "hello.png"
+  alt: "Hello World 미리보기"
+
 ---
 
 ## 프로젝트 개요
