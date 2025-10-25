@@ -73,4 +73,19 @@ sections:
           description: 100%
     design:
       columns: 4
+  - block: collection          
+    id: my-cards               
+    content:
+      title: Recent Work
+      subtitle: ""
+      text: >
+        최근에 진행한 작업/프로젝트입니다.
+        (더 자세한 내용은 'Read more'로 이동)
+      filters:
+        folders:
+          - post               
+    design:
+      view: card              
+      columns: '2'             
+---
 ---
