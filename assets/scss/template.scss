@@ -21,7 +21,9 @@ body {
 .dark .page-footer {
   background-color: rgb(44, 47, 51);
 }
-
+.page-body {
+  padding-bottom: 3rem;  // 원하면 4rem, 5rem로 더 벌릴 수 있음
+}
 // more rounded cards and larger gap between cards
 .card-simple {
   margin-top: 1.8rem;

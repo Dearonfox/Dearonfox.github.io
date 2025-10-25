@@ -14,6 +14,6 @@
 - 문의: **hjklpo909@naver.com**
 
 ## 🧰 기술 스택
-- **Frontend**: HTML, CSS/SCSS, JavaScript  
-- **Backend**: Python(Flask/FastAPI) *(필요 시 수정)*  
+- **Frontend**: HTML, CSS/SCSS, JavaScript, React
+- **Backend**: Python(Flask/FastAPI)  
 - **Infra/툴**: GitHub Actions, GitHub Pages, Hugo(HugoBlox)
