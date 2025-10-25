@@ -4,6 +4,7 @@ summary: "연락처"
 draft: false
 type: page
 url: /contact/
+class : contact-page
 ---
 
 ## 연락처

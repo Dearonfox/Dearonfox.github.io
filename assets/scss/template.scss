@@ -148,3 +148,11 @@ a.btn.btn-link:hover {
   word-break: keep-all;   
   hyphens: auto;         
 }
+.contact-page,
+.contact-page p,
+.contact-page li {
+  text-align: justify;        /* 양쪽정렬 */
+  text-justify: inter-word;   /* 단어 단위로 간격 조절 */
+  word-break: keep-all;       /* 한국어 단어 뚝뚝 안 잘리게 */
+  hyphens: auto;              /* (영어일 때) 단어 하이픈 분할 허용 */
+}
