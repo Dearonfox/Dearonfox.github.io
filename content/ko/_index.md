@@ -73,19 +73,74 @@ sections:
           description: 100%
     design:
       columns: 4
-  - block: collection          
-    id: my-cards               
+  - block: markdown
+    id: news
     content:
-      title: Recent Work
-      subtitle: ""
-      text: >
-        최근에 진행한 작업/프로젝트입니다.
-        (더 자세한 내용은 'Read more'로 이동)
-      filters:
-        folders:
-          - post               
+      title: ""
+      text: |
+        <div style="
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          gap: 2rem;
+          align-items: start;
+        ">
+
+          <!-- 왼쪽 타이틀 영역 -->
+          <div style="color:#fff; font-size: clamp(2rem, 1.2vw + 1.5rem, 3rem); font-weight:600; line-height:1.2;">
+            <div>Notifications &</div>
+            <div>News</div>
+          </div>
+
+          <!-- 오른쪽 카드 영역 -->
+          <div style="
+            background-color:#2f3339;
+            border-radius:12px;
+            padding:2rem;
+            color:#fff;
+            box-shadow:0 12px 24px rgba(0,0,0,0.5);
+            max-width: 100%;
+          ">
+
+            <!-- 카드 상단 이미지 -->
+            <img
+              src="/media/hawaii.jpg"
+              alt="ICCV 2025 Hawaii"
+              style="
+                width:100%;
+                height:auto;
+                border-radius:4px;
+                margin-bottom:1.5rem;
+                display:block;
+              "
+            />
+
+            <!-- 카드 헤드라인 -->
+            <h3 style="
+              color:#1d4ed8;  /* 파란 강조색 */
+              font-size:1.25rem;
+              font-weight:700;
+              line-height:1.4;
+              text-transform:uppercase;
+              margin:0 0 1rem 0;
+            ">
+              CONGRATULATIONS TO SEO-YEON CHOI (STUDENT RESEARCHER)
+              ON TWO PAPERS ACCEPTED TO ICCV 2025 WORKSHOPS!
+            </h3>
+
+            <!-- 카드 본문 -->
+            <p style="
+              color:#d1d5db;
+              font-size:1rem;
+              line-height:1.6;
+              margin:0;
+            ">
+              We are thrilled to announce that our undergraduate researcher,
+              Seo-Yeon Choi (최서연), has achieved a remarkable accomplishment —
+              two papers have been accepted to workshops at ICCV 2025.
+            </p>
+
+          </div><!-- /card -->
+
+        </div><!-- /grid -->
     design:
-      view: card              
-      columns: '2'             
----
----
+      columns: '1'
