@@ -1,0 +1,108 @@
+{{/* layouts/partials/views/community/custom_card.html */}}
+
+{{ $item := .item }}
+
+{{/* 링크 처리 (외부 링크면 새창) */}}
+{{ $link := $item.RelPermalink }}
+{{ $target := "" }}
+{{ if $item.Params.external_link }}
+  {{ $link = $item.Params.external_link }}
+  {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+{{ end }}
+
+{{/* 요약 텍스트 뽑기: summary가 있으면 그거 쓰고, 없으면 걍 비워 */}}
+{{ $summary := "" }}
+{{ if $item.Params.summary }}
+  {{ $summary = $item.Params.summary }}
+{{ else if $item.Summary }}
+  {{ $summary = $item.Summary }}
+{{ end }}
+
+<div style="
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color:#1f2127;
+  padding:4rem 1rem;
+  color:#fff;
+">
+
+  <!-- 왼쪽 큰 타이틀 / 섹션 제목 -->
+  <div style="
+    color:#fff;
+    font-size: clamp(2rem, 1.2vw + 1.5rem, 3rem);
+    font-weight:600;
+    line-height:1.2;
+  ">
+    <div>{{ .Title }}</div>
+
+    {{ with .Subtitle }}
+      {{ if ne . "" }}
+        <div style="
+          margin-top:0.5rem;
+          font-size:1rem;
+          font-weight:400;
+          color:#9ca3af;
+        ">
+          {{ . }}
+        </div>
+      {{ end }}
+    {{ end }}
+  </div>
+
+  <!-- 오른쪽 뉴스 카드 -->
+  <div style="
+    background-color:#2f3339;
+    border-radius:12px;
+    padding:2rem;
+    color:#fff;
+    box-shadow:0 12px 24px rgba(0,0,0,0.5);
+    max-width:100%;
+  ">
+
+    {{/* 대표 이미지: 글 front matter에 featured: "/media/hawaii.jpg" 이런 식으로 직접 넣어 */}}
+    {{ with $item.Params.featured }}
+      <img
+        src="{{ . }}"
+        alt=""
+        style="
+          width:100%;
+          height:auto;
+          border-radius:4px;
+          margin-bottom:1.5rem;
+          display:block;
+        "
+      />
+    {{ end }}
+
+    <h3 style="
+      color:#1d4ed8;
+      font-size:1.25rem;
+      font-weight:700;
+      line-height:1.4;
+      text-transform:uppercase;
+      margin:0 0 1rem 0;
+    ">
+      <a href="{{ $link }}" {{ $target | safeHTMLAttr }} style="color:inherit; text-decoration:none;">
+        {{ $item.Title }}
+      </a>
+    </h3>
+
+    {{ if $summary }}
+      <p style="
+        color:#d1d5db;
+        font-size:1rem;
+        line-height:1.6;
+        margin:0;
+      ">
+        {{ $summary }}
+      </p>
+    {{ end }}
+
+  </div><!-- /오른쪽 카드 -->
+
+</div><!-- /그리드 전체 -->
