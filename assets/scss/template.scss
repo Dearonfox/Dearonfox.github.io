@@ -118,7 +118,7 @@ btn, a.btn {
   transition: background-color .2s ease, color .2s ease, border-color .2s ease;
 }
 
-/* 기본(primary) 버튼 */
+
 .btn.btn-primary:hover,
 a.btn.btn-primary:hover {
   background-color: #b36bff;  
@@ -137,4 +137,12 @@ a.btn.btn-outline-primary:hover {
 a.btn.btn-link:hover {
   text-decoration: none;
   color: #ff6b6b;
+}
+.justify,
+.justify p,
+.justify li {
+  text-align: justify;
+  text-justify: inter-word;
+  word-break: keep-all;   
+  hyphens: auto;         
 }
