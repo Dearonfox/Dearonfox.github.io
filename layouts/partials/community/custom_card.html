@@ -1,0 +1,111 @@
+{{/* 
+  custom_card.html
+  보여줄 데이터:
+  - .Title / .Subtitle : 섹션 타이틀
+  - .Items : collection 블록이 모아온 콘텐츠들 (post 등)
+
+  이 버전은:
+  왼쪽 : 섹션 제목
+  오른쪽 : 최신 글 1개를 큰 카드로
+*/}}
+
+<div style="
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+">
+
+  <!-- 왼쪽 큰 타이틀 -->
+  <div style="
+    color: #fff;
+    font-size: clamp(2rem, 1.2vw + 1.5rem, 3rem);
+    font-weight: 600;
+    line-height: 1.2;
+  ">
+    <div>{{ .Title }}</div>
+
+    {{ with .Subtitle }}
+      {{ if ne . "" }}
+        <div style="
+          margin-top: 0.5rem;
+          font-size: 1rem;
+          font-weight: 400;
+          color: #9ca3af;
+        ">
+          {{ . }}
+        </div>
+      {{ end }}
+    {{ end }}
+  </div>
+
+  <!-- 오른쪽 카드 -->
+  {{ $items := .Items }}
+  {{ if gt (len $items) 0 }}
+    {{ $first := index $items 0 }}
+
+    <div style="
+      background-color:#2f3339;
+      border-radius:12px;
+      padding:2rem;
+      color:#fff;
+      box-shadow:0 12px 24px rgba(0,0,0,0.5);
+    ">
+
+      {{/* 대표 이미지 (글 front matter 안에 featured: "/media/whatever.jpg") */}}
+      {{ with $first.Params.featured }}
+        <img 
+          src="{{ . }}"
+          alt=""
+          style="
+            width:100%;
+            height:auto;
+            border-radius:4px;
+            margin-bottom:1.5rem;
+            display:block;
+          "
+        />
+      {{ end }}
+
+      <!-- 카드 헤드라인 -->
+      <h3 style="
+        color:#1d4ed8;
+        font-size:1.25rem;
+        font-weight:700;
+        line-height:1.4;
+        text-transform:uppercase;
+        margin:0 0 1rem 0;
+      ">
+        <a href="{{ $first.RelPermalink }}" style="color:inherit; text-decoration:none;">
+          {{ $first.Title }}
+        </a>
+      </h3>
+
+      <!-- 카드 본문 요약 -->
+      <p style="
+        color:#d1d5db;
+        font-size:1rem;
+        line-height:1.6;
+        margin:0;
+      ">
+        {{ with $first.Summary }}
+          {{ . }}
+        {{ else }}
+          {{ $first.Params.summary }}
+        {{ end }}
+      </p>
+
+    </div>
+  {{ else }}
+    <!-- 만약 글이 하나도 없으면 -->
+    <div style="color:#fff; background:#2f3339; border-radius:12px; padding:2rem;">
+      <p style="margin:0; color:#d1d5db; font-size:1rem; line-height:1.6;">
+        아직 등록된 소식이 없습니다.
+      </p>
+    </div>
+  {{ end }}
+
+</div>
