@@ -1,111 +1,58 @@
-{{/* 
-  custom_card.html
-  보여줄 데이터:
-  - .Title / .Subtitle : 섹션 타이틀
-  - .Items : collection 블록이 모아온 콘텐츠들 (post 등)
+{{ $item := .item }}
+{{ $has_attachments := partial "functions/has_attachments" $item }}
 
-  이 버전은:
-  왼쪽 : 섹션 제목
-  오른쪽 : 최신 글 1개를 큰 카드로
-*/}}
+{{ $link := $item.RelPermalink }}
+{{ $target := "" }}
+{{ if $item.Params.external_link }}
+  {{ $link = $item.Params.external_link }}
+  {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+{{ end }}
 
-<div style="
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem;
-  align-items: start;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-">
+{{/* Get summary. */}}
+{{ $summary := "" }}
+{{ if $item.Params.summary }}
+  {{ $summary = $item.Params.summary | markdownify | emojify }}
+{{ else if $item.Params.abstract }}
+  {{ $summary = $item.Params.abstract | markdownify | emojify | truncate (site.Params.abstract_length | default 135) }}
+{{ else if $item.Summary }}
+  {{ $summary = $item.Summary }}
+{{ end }}
 
-  <!-- 왼쪽 큰 타이틀 -->
-  <div style="
-    color: #fff;
-    font-size: clamp(2rem, 1.2vw + 1.5rem, 3rem);
-    font-weight: 600;
-    line-height: 1.2;
-  ">
-    <div>{{ .Title }}</div>
+{{ $resource := partial "blox-core/functions/get_featured_image.html" $item }}
 
-    {{ with .Subtitle }}
-      {{ if ne . "" }}
-        <div style="
-          margin-top: 0.5rem;
-          font-size: 1rem;
-          font-weight: 400;
-          color: #9ca3af;
-        ">
-          {{ . }}
+<div class="card">
+  {{ with $resource }}
+  {{ $image := .Resize "550x" }}
+  {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
+  <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="card-image hover-overlay">
+    <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}"
+         alt="{{ $item.Title }}" class="img-responsive" loading="lazy" style="margin-top: 15px;">
+  </a>
+  {{ end }}
+  <div class="card-text">
+    <div class="section-subheading article-title mb-1 mt-3">
+        <h4><a href="{{ $link }}" {{ $target | safeHTMLAttr }}>{{ $item.Title | markdownify | emojify }}</a></h4>
+    </div>
+    
+
+    {{ if $item.Params.authors }}
+    <div class="article-metadata">
+        <div>
+            {{ partial "page_metadata_authors" $item }}
         </div>
-      {{ end }}
+    </div>
+    {{ end }}
+
+    {{ with $summary }}
+    <div class="article-style">
+      <p>{{ . }}</p>
+    </div>
+    {{ end }}
+
+    {{ if $has_attachments }}
+    <div class="btn-links">
+      {{ partial "page_links" (dict "page" $item "is_list" 1) }}
+    </div>
     {{ end }}
   </div>
-
-  <!-- 오른쪽 카드 -->
-  {{ $items := .Items }}
-  {{ if gt (len $items) 0 }}
-    {{ $first := index $items 0 }}
-
-    <div style="
-      background-color:#2f3339;
-      border-radius:12px;
-      padding:2rem;
-      color:#fff;
-      box-shadow:0 12px 24px rgba(0,0,0,0.5);
-    ">
-
-      {{/* 대표 이미지 (글 front matter 안에 featured: "/media/whatever.jpg") */}}
-      {{ with $first.Params.featured }}
-        <img 
-          src="{{ . }}"
-          alt=""
-          style="
-            width:100%;
-            height:auto;
-            border-radius:4px;
-            margin-bottom:1.5rem;
-            display:block;
-          "
-        />
-      {{ end }}
-
-      <!-- 카드 헤드라인 -->
-      <h3 style="
-        color:#1d4ed8;
-        font-size:1.25rem;
-        font-weight:700;
-        line-height:1.4;
-        text-transform:uppercase;
-        margin:0 0 1rem 0;
-      ">
-        <a href="{{ $first.RelPermalink }}" style="color:inherit; text-decoration:none;">
-          {{ $first.Title }}
-        </a>
-      </h3>
-
-      <!-- 카드 본문 요약 -->
-      <p style="
-        color:#d1d5db;
-        font-size:1rem;
-        line-height:1.6;
-        margin:0;
-      ">
-        {{ with $first.Summary }}
-          {{ . }}
-        {{ else }}
-          {{ $first.Params.summary }}
-        {{ end }}
-      </p>
-
-    </div>
-  {{ else }}
-    <!-- 만약 글이 하나도 없으면 -->
-    <div style="color:#fff; background:#2f3339; border-radius:12px; padding:2rem;">
-      <p style="margin:0; color:#d1d5db; font-size:1rem; line-height:1.6;">
-        아직 등록된 소식이 없습니다.
-      </p>
-    </div>
-  {{ end }}
-
 </div>
