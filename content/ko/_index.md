@@ -73,22 +73,3 @@ sections:
           description: 100%
     design:
       columns: 4
-  - block: collection
-    content:
-      id: news
-      title: Notifications & News
-      subtitle: ""
-      text: ""
-      count: 5         # 최대 몇 개의 글(뉴스 항목) 보여줄지
-      offset: 0        # 건너뛸 개수. 0이면 최신부터
-      order: desc      # 최신순
-      filters:
-        folders:
-          - post       # 너가 쓸 폴더. 없으면 먼저 만들면 됨: content/post/...
-          # 필요하면 이런 것도 가능:
-          # - notification
-          # - event
-    design:
-      view: community/custom_card
-      columns: '2'
----
