@@ -1,5 +1,5 @@
 ---
-title: Recommendation Systems
+title: ShoppingMall
 summary: "<p class=\"justify\">JSP 활용, 쇼핑몰<p>"
 tags:
   - ML
