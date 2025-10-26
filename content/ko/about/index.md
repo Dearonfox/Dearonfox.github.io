@@ -22,18 +22,16 @@ sections:
     content:
       title: 찾아오시는 길
       address:
-        street: "전북대학교 공과대학 7호관 626호"
+        street: "금암동 620-30"
         city: "전주시"
         region: "전라북도"
-        postcode: "54896"
+        postcode: "54930"
         country: "대한민국"
         country_code: "KR"
       coordinates:
-        latitude: 35.84601324617979
-        longitude: 127.13444961966684
+        latitude: 35.840290
+        longitude: 127.136876
       autolink: true
       contact_links: []
-    design:
-      columns: "1"
-      css_class: justify
+    
 ---

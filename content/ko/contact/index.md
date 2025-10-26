@@ -5,6 +5,8 @@ draft: false
 type: page
 url: /contact/
 class : contact-page
+design:
+    css_class: justify
 ---
 
 ## 연락처
