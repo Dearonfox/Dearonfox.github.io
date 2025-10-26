@@ -5,12 +5,12 @@ body {
 }
 
 .article-container {
-  background-color: #b3deaa;
+  background-color: rgb(173, 201, 188);
   border-radius: 15px;
 }
 
 .dark .article-container {
-  background-color: rgb(47, 55, 67);
+  background-color: rgb(8, 37, 75);
 }
 
 // custom footer color
@@ -19,7 +19,7 @@ body {
 }
 
 .dark .page-footer {
-  background-color: rgb(44, 47, 51);
+  background-color: rgb(8, 37, 75);
 }
 .page-body {
   padding-bottom: 3rem;  // 원하면 4rem, 5rem로 더 벌릴 수 있음
@@ -31,7 +31,7 @@ body {
 }
 
 .dark .card-simple {
-  background: rgb(31, 39, 51);
+  background: rgb(8, 37, 75);
 }
 
 // no navbar shadow
@@ -156,4 +156,18 @@ a.btn.btn-link:hover {
   text-justify: inter-word;  
   word-break: keep-all;       
   hyphens: auto;            
+}
+.navbar a,
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: #0f1a14 !important;
+  text-decoration: none;
+  transition: color .15s ease;
+}
+
+.navbar a:hover,
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover {
+  color: #ffffff !important; 
+  text-decoration: none;
 }
