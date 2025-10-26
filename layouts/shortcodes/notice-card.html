@@ -1,0 +1,19 @@
+<div class="custom-notice-card">
+  <div class="custom-notice-card__image-wrapper">
+    <img src="{{ .Get "img" }}" alt="" class="custom-notice-card__image">
+  </div>
+
+  <div class="custom-notice-card__body">
+    <h2 class="custom-notice-card__title">
+      {{ with .Get "link" }}
+        <a href="{{ . }}" class="custom-notice-card__link">{{ $.Get "title" }}</a>
+      {{ else }}
+        {{ .Get "title" }}
+      {{ end }}
+    </h2>
+
+    <div class="custom-notice-card__text">
+      {{ .Inner | markdownify }}
+    </div>
+  </div>
+</div>
