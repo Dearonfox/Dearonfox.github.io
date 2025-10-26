@@ -1,5 +1,5 @@
 ---
-title: Hello World
+title: Voca
 summary:  "<p class=\"justify\">리액트 활용, Voca<p>"
 tags:
   - CV
